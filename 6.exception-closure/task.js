@@ -22,22 +22,19 @@ class Triangle {
     constructor(a, b, c) {
         if (((a + b) <= c) || ((a + c) <= b) || ((b + c) <= a)) {
             throw new Error("Треугольник с такими сторонами не существует");
-        } else {
-            this.a = a;
-            this.b = b;
-            this.c = c;
         }
+        this.a = a;
+        this.b = b;
+        this.c = c;
     }
 
-get perimetr() {
-    let per = (this.a + this.b + this.c);
-    return per;
+get perimeter() {
+    return (this.a + this.b + this.c);
 }
 
 get area() {
     let p = (this.a + this.b + this.c) / 2;
-    let ar = Math.round(Math.sqrt((p * (p - this.a) * (p - this.b) * (p - this.b))) * 1000) / 1000;
-    return ar;
+    return (Math.round(Math.sqrt((p * (p - this.a) * (p - this.b) * (p - this.c))) * 1000) / 1000);
 }
 }
 
@@ -56,8 +53,6 @@ function getTriangle(a, b, c) {
             }
         }
         return err;
-    }
-    finally {
     }
 }
 
